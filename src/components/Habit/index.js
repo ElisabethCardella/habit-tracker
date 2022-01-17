@@ -1,11 +1,11 @@
-import { Container, HStack, Spacer } from "@chakra-ui/react";
-import { Editable, EditableInput, EditablePreview } from "@chakra-ui/react";
-import { Checkbox, Stack, VStack, Text } from "@chakra-ui/react";
+import { HStack, Spacer } from "@chakra-ui/react";
+import { Editable, EditableInput } from "@chakra-ui/react";
+import { Checkbox, VStack } from "@chakra-ui/react";
 import { Divider } from "@chakra-ui/react";
-import { Grid, GridItem } from "@chakra-ui/react";
+import { ListItem, UnorderedList } from "@chakra-ui/react";
 
 const Habit = () => {
-  const Habits = [
+  /*const eachHabit = [
     {
       id: 1,
       body: "sleep",
@@ -15,11 +15,10 @@ const Habit = () => {
       id: 2,
       body: "dance",
     },
-  ];
+  ];*/
 
   return (
     <VStack
-      divider={<Divider />}
       borderColor="#97266D"
       border="2px"
       p="4"
@@ -28,17 +27,40 @@ const Habit = () => {
       maxW={{ base: "100%", md: "50%", xl: "25%" }}
       alignItems="stretch"
     >
-      {Habits.map((habit) => (
-        <HStack p={5} key={habit.id}>
-          <Editable>
-            {habit.body}
-            <EditablePreview />
-            <EditableInput />
-          </Editable>
-          <Spacer />
-          <Checkbox size="lg" />
-        </HStack>
-      ))}
+      <UnorderedList>
+        <ListItem>
+          <HStack p={5} /*key={eachHabit.id}*/>
+            <Editable>
+              Cinema
+              <EditableInput />
+            </Editable>
+            <Spacer />
+            <Checkbox size="lg" />
+          </HStack>
+        </ListItem>
+        <Divider />
+        <ListItem>
+          <HStack p={5} /*key={eachHabit.id}*/>
+            <Editable>
+              Exercices
+              <EditableInput />
+            </Editable>
+            <Spacer />
+            <Checkbox size="lg" />
+          </HStack>
+        </ListItem>
+        <Divider />
+        <ListItem>
+          <HStack p={5} /*key={eachHabit.id}*/>
+            <Editable>
+              Dancing
+              <EditableInput />
+            </Editable>
+            <Spacer />
+            <Checkbox size="lg" />
+          </HStack>
+        </ListItem>
+      </UnorderedList>
     </VStack>
   );
 };

@@ -10,17 +10,23 @@ import {
 } from "@chakra-ui/react";
 import { FaSun, FaMoon } from "react-icons/fa";
 import { useState, useEffect } from "react";
+import Days from "./components/Days";
 
 function App(habits) {
   const initialHabits = [
     {
       id: 1,
-      body: "sleep",
+      body: "Exercice",
     },
 
     {
       id: 2,
-      body: "dance",
+      body: "Yoga",
+    },
+
+    {
+      id: 2,
+      body: "Writing",
     },
   ];
 
@@ -35,6 +41,7 @@ function App(habits) {
         alignSelf="flex-end"
       />
       <Header />
+      <Days />
 
       <Habit habits={habits} />
       <AddHabit />
