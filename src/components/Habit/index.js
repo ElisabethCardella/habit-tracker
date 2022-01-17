@@ -1,14 +1,8 @@
-import { Container, HStack, Spacer } from "@chakra-ui/react";
-import { Editable, EditableInput, EditablePreview } from "@chakra-ui/react";
-import { Checkbox, Stack, VStack, Text } from "@chakra-ui/react";
+import { HStack, Spacer } from "@chakra-ui/react";
+import { Editable, EditableInput } from "@chakra-ui/react";
+import { Checkbox, VStack } from "@chakra-ui/react";
 import { Divider } from "@chakra-ui/react";
-import {
-  List,
-  ListItem,
-  ListIcon,
-  OrderedList,
-  UnorderedList,
-} from "@chakra-ui/react";
+import { ListItem, UnorderedList } from "@chakra-ui/react";
 
 const Habit = () => {
   /*const eachHabit = [
