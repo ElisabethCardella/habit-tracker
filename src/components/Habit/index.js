@@ -3,7 +3,6 @@ import { Checkbox, VStack } from "@chakra-ui/react";
 import { Divider } from "@chakra-ui/react";
 import { ListItem, UnorderedList } from "@chakra-ui/react";
 import { Text } from "@chakra-ui/react";
-
 import { useState } from "react";
 
 const Habit = () => {

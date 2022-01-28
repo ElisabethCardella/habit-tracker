@@ -1,8 +1,36 @@
 import { Flex } from "@chakra-ui/react";
 import { ChevronLeftIcon, ChevronRightIcon } from "@chakra-ui/icons";
 import { Box, Container, Spacer, Text } from "@chakra-ui/react";
+import { useState } from "react";
+import {
+  add,
+  format,
+  isBefore,
+  isToday,
+  isTomorrow,
+  isYesterday,
+  sub,
+} from "date-fns";
 
-const Date = () => {
+const DateBox = () => {
+  const [date, setDate] = useState(new Date());
+
+  console.log(date);
+
+  const formatDate = (date) => {
+    if (isToday(date)) {
+      return "Today";
+    }
+    if (isYesterday(date)) {
+      return "Yesterday";
+    }
+    if (isTomorrow(date)) {
+      return "Tomorrow";
+    }
+
+    return format(date, "MM/dd/yyyy");
+  };
+
   return (
     <Container>
       <Container
@@ -14,17 +42,17 @@ const Date = () => {
       >
         <Flex>
           <Box>
-            <button>
+            <button onClick={() => setDate(sub(date, { days: 1 }))}>
               <ChevronLeftIcon />
             </button>
           </Box>
           <Spacer />
           <Box>
-            <Text>Monday</Text>
+            <Text>{formatDate(date)}</Text>
           </Box>
           <Spacer />
           <Box>
-            <button>
+            <button onClick={() => setDate(add(date, { days: 1 }))}>
               <ChevronRightIcon />
             </button>
           </Box>
@@ -34,4 +62,4 @@ const Date = () => {
   );
 };
 
-export default Date;
+export default DateBox;
