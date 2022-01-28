@@ -2,20 +2,10 @@ import { Flex } from "@chakra-ui/react";
 import { ChevronLeftIcon, ChevronRightIcon } from "@chakra-ui/icons";
 import { Box, Container, Spacer, Text } from "@chakra-ui/react";
 import { useState } from "react";
-import {
-  add,
-  format,
-  isBefore,
-  isToday,
-  isTomorrow,
-  isYesterday,
-  sub,
-} from "date-fns";
+import { add, format, isToday, isTomorrow, isYesterday, sub } from "date-fns";
 
 const DateBox = () => {
   const [date, setDate] = useState(new Date());
-
-  console.log(date);
 
   const formatDate = (date) => {
     if (isToday(date)) {
@@ -28,7 +18,7 @@ const DateBox = () => {
       return "Tomorrow";
     }
 
-    return format(date, "MM/dd/yyyy");
+    return format(date, "MMMM do");
   };
 
   return (
