@@ -17,6 +17,7 @@ const Habit = () => {
               <Text fontSize="lg">Gym</Text>
 
               <Spacer />
+
               <Checkbox
                 size="lg"
                 type="checkbox"
@@ -25,7 +26,9 @@ const Habit = () => {
               />
             </HStack>
           </ListItem>
+
           <Divider />
+
           <ListItem>
             <HStack spacing="150" p={5} display="flex" justifyContent="stretch">
               <Text fontSize="lg">Exercices</Text>
@@ -38,7 +41,9 @@ const Habit = () => {
               />
             </HStack>
           </ListItem>
+
           <Divider />
+
           <ListItem>
             <HStack p={5}>
               <Text fontSize="lg">Dancing</Text>
