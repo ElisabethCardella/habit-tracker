@@ -1,11 +1,16 @@
 import { Flex } from "@chakra-ui/react";
 import { ChevronLeftIcon, ChevronRightIcon } from "@chakra-ui/icons";
 import { Box, Container, Spacer, Text } from "@chakra-ui/react";
-import { useState } from "react";
-import { add, format, isToday, isTomorrow, isYesterday, sub } from "date-fns";
+import { format, isToday, isTomorrow, isYesterday } from "date-fns";
+import { useDispatch } from "react-redux";
+import { NEXT_DAY, PREVIOUS_DAY } from "../../actions/dateActions";
+import { previousDay, nextDay } from "../../actions/dateActions";
+import { dateReducer } from "../../reducers/dateReducer";
+import { useSelector } from "react-redux";
 
 const DateBox = () => {
-  const [date, setDate] = useState(new Date());
+  const date = useSelector((state) => state.date.date);
+  const dispatch = useDispatch();
 
   const formatDate = (date) => {
     if (isToday(date)) {
@@ -22,7 +27,7 @@ const DateBox = () => {
   };
 
   return (
-    <Container>
+    <Container p="8">
       <Container
         borderColor="#97266D"
         border="2px"
@@ -32,7 +37,7 @@ const DateBox = () => {
       >
         <Flex>
           <Box>
-            <button onClick={() => setDate(sub(date, { days: 1 }))}>
+            <button onClick={() => dispatch(previousDay())}>
               <ChevronLeftIcon />
             </button>
           </Box>
@@ -42,7 +47,7 @@ const DateBox = () => {
           </Box>
           <Spacer />
           <Box>
-            <button onClick={() => setDate(add(date, { days: 1 }))}>
+            <button onClick={() => dispatch(nextDay())}>
               <ChevronRightIcon />
             </button>
           </Box>
