@@ -3,9 +3,7 @@ import { ChevronLeftIcon, ChevronRightIcon } from "@chakra-ui/icons";
 import { Box, Container, Spacer, Text } from "@chakra-ui/react";
 import { format, isToday, isTomorrow, isYesterday } from "date-fns";
 import { useDispatch } from "react-redux";
-import { NEXT_DAY, PREVIOUS_DAY } from "../../actions/dateActions";
 import { previousDay, nextDay } from "../../actions/dateActions";
-import { dateReducer } from "../../reducers/dateReducer";
 import { useSelector } from "react-redux";
 
 const DateBox = () => {

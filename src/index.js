@@ -6,7 +6,7 @@ import reportWebVitals from "./reportWebVitals";
 import { ChakraProvider } from "@chakra-ui/react";
 import store from "./store";
 import { Provider } from "react-redux";
-import theme from "./components/Elements";
+import theme from "./components/Banner";
 
 ReactDOM.render(
   <React.StrictMode>
