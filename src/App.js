@@ -1,14 +1,14 @@
 import "./App.css";
-import Habit from "./components/Habit";
-import DateBox from "./components/DateBox";
-import { VStack } from "@chakra-ui/react";
+import Home from "./pages/Home";
+import HabitPage from "./pages/HabitPage";
+import { Routes, Route } from "react-router-dom";
 
 function App() {
   return (
-    <VStack>
-      <DateBox />;
-      <Habit />;
-    </VStack>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/habit" element={<HabitPage />} />
+    </Routes>
   );
 }
 

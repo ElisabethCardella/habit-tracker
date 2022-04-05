@@ -1,16 +1,20 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { BrowserRouter } from "react-router-dom";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { ChakraProvider } from "@chakra-ui/react";
 import store from "./store";
 import { Provider } from "react-redux";
+import theme from "./components/Banner";
 
 ReactDOM.render(
   <React.StrictMode>
-    <Provider store={store}>
+    <Provider theme={theme} store={store}>
       <ChakraProvider>
-        <App />
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
       </ChakraProvider>
     </Provider>
   </React.StrictMode>,
